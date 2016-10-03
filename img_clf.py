@@ -3,9 +3,7 @@ from keras.models import Sequential, model_from_json
 from keras.layers import Convolution2D, MaxPooling2D, ZeroPadding2D, Activation, Dropout, Flatten, Dense
 from keras.callbacks import EarlyStopping
 from keras import optimizers
-from matplotlib.pyplot import imshow
 import numpy as np
-from PIL import Image
 import csv
 from scipy.misc import imresize
 import os
@@ -18,9 +16,9 @@ top_model_weights_path = '../bottleneck_model.h5'   # this is the best performin
 
 
 ### paths to training and testing data
-train_data_dir = '/data/train'
-validation_data_dir = '/data/validation'
-test_data_dir = '/data/test'
+train_data_dir = '../data/train'
+validation_data_dir = '../data/validation'
+test_data_dir = '../data/test'
 
 ### other hyperparameters  
 nb_train_samples = 24500
