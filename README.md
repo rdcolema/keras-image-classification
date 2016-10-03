@@ -20,5 +20,7 @@ The data directory structure I used was:
 After playing around with hyperparameters a bit, this reaches around 96-98% accuracy on the validation data, and when tested in Kaggle's competition maxed out with a log loss score around 0.18.
 
 Most of the code / strategy here was based on <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">this</a> Keras tutorial.
+
+Pre-trained vg166 model weights can be downloaded <a href="https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3">here</a>.
             
 
