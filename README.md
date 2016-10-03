@@ -17,6 +17,8 @@ The data directory structure I used was:
     * test
       * test
     
+After playing around with hyperparameters a bit, this reaches around 96-98% accuracy on the validation data, and when tested in Kaggle's competition maxed out with a log loss score around 0.18.
+
 Most of the code / strategy here was based on <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">this</a> Keras tutorial.
             
 
