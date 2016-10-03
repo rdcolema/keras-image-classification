@@ -21,6 +21,6 @@ After playing around with hyperparameters a bit, this reaches around 96-98% accu
 
 Most of the code / strategy here was based on <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">this</a> Keras tutorial.
 
-Pre-trained vg166 model weights can be downloaded <a href="https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3">here</a>.
+Pre-trained VGG16 model weights can be downloaded <a href="https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3">here</a>.
             
 
