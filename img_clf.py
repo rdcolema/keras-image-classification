@@ -110,7 +110,7 @@ def save_bottlebeck_features():
 
 
 def train_top_model():
-    """trains the model and adds a classifier on top"""
+    """trains the classifier"""
     train_data = np.load(open('bottleneck_features_train.npy', 'rb'))
     train_labels = np.array([0] * (nb_train_samples / 2) + [1] * (nb_train_samples / 2))
 
