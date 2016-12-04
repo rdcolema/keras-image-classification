@@ -22,5 +22,8 @@ After playing around with hyperparameters a bit, this reaches around 96-98% accu
 Most of the code / strategy here was based on <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">this</a> Keras tutorial.
 
 Pre-trained VGG16 model weights can be downloaded <a href="https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3">here</a>.
+
+### UPDATE:
+Added jupyter notebook that produced a slightly better score (.161 log loss on kaggle test set). Might run into memory errors because of the large image dimensions -- if so reducing the number of folds and saving the model weights rather than keeping the models in memory should do the trick. The notebook uses a slightly flatter directory structure, with the validation split happening after the images are loaded.
             
 
