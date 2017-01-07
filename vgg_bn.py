@@ -72,7 +72,7 @@ class Vgg16BN():
 
     def compile(self):
         self.model.compile(optimizer=Adam(lr=self.lr),
-                loss='categorical_crossentropy', metrics=['val_loss', 'accuracy'])
+                loss='categorical_crossentropy', metrics=['accuracy'])
 
     def fit(self, trn_path, val_path, nb_trn_samples, nb_val_samples, nb_epoch=1, callbacks=None, aug=False):
         if aug:
