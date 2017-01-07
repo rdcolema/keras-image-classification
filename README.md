@@ -2,8 +2,9 @@
 
 Classifies an image as containing either a dog or a cat (using Kaggle's <a href="https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/data">public dataset</a>), but could easily be extended to other image classification problems.
 
-To run this script, you must have keras, numpy, scipy, and h5py installed, and GPU acceleration with keras is <em>highly</em> recommended.
+To run these scripts/notebooks, you must have keras, numpy, scipy, and h5py installed, and enabling GPU acceleration is highly recommended if that's an option.
 
+## img_clf.py
 The data directory structure I used was:
 
 * project
@@ -23,7 +24,17 @@ Most of the code / strategy here was based on <a href="https://blog.keras.io/bui
 
 Pre-trained VGG16 model weights can be downloaded <a href="https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3">here</a>.
 
-### UPDATE:
-Added jupyter notebook that produced a slightly better score (.161 log loss on kaggle test set). Might run into memory errors because of the large image dimensions -- if so reducing the number of folds and saving the model weights rather than keeping the models in memory should do the trick. The notebook uses a slightly flatter directory structure, with the validation split happening after the images are loaded.
+## cats_n_dogs.ipynb:
+This produced a slightly better score (.161 log loss on kaggle test set). The better score most likely comes from having larger images and ensembling a few models, despite the fact there's no image augmentation in the notebook. 
+
+Might run into memory errors because of the large image dimensions -- if so reducing the number of folds and saving the model weights rather than keeping the models in memory should do the trick. The notebook uses a slightly flatter directory structure, with the validation split happening after the images are loaded:
+
+* project
+  * data
+    * train
+      * dogs
+      * cats
+    * test
+      * test
             
 
