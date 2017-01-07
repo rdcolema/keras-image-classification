@@ -4,7 +4,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.models import Sequential
 from keras.layers.core import Flatten, Dense, Dropout, Lambda
 from keras.layers.convolutional import Convolution2D, MaxPooling2D, ZeroPadding2D
-from keras.optimizers import SGD
+from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator
 
 
@@ -71,8 +71,8 @@ class Vgg16BN():
         model.add(Dense(self.n_classes, activation='softmax'))
 
     def compile(self):
-        self.model.compile(optimizer=SGD(lr=self.lr, decay=1e-6, momentum=0.9, nesterov=True),
-                loss='categorical_crossentropy', metrics=['accuracy'])
+        self.model.compile(optimizer=Adam(lr=self.lr),
+                loss='categorical_crossentropy', metrics=['val_loss', 'accuracy'])
 
     def fit(self, trn_path, val_path, nb_trn_samples, nb_val_samples, nb_epoch=1, callbacks=None, aug=False):
         if aug:
