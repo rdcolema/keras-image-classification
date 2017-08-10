@@ -265,7 +265,7 @@ def predict_labels(model):
         shuffle=False,
         class_mode=None)
 
-    base_path = "../data/test/test/"
+    base_path = test_data_dir + "/test/"
 
     with open("prediction.csv", "w") as f:
         p_writer = csv.writer(f, delimiter=',', lineterminator='\n')
@@ -281,7 +281,18 @@ def predict_labels(model):
                                                    shuffle=False)
                 prediction = model.predict_generator(test_generator, 1)[0][0]
                 p_writer.writerow([pic_id, prediction])
+                
+def load_model():
+    """Loads a model from an earlier run"""
 
+    json_file = open('final_model_architecture.json', 'r')
+    model_json = json_file.read()
+    json_file.close()
+    model = model_from_json(model_json)
+    model.load_weights('final_weights.h5')
+    print "Model Loaded."
+    
+    return model
 
 if __name__ == "__main__":
     save_bottlebeck_features()
